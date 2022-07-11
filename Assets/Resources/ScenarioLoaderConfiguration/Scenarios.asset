@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1396e280d68eefd4897ff06ce3e27a92, type: 3}
+  m_Name: Scenarios
+  m_EditorClassIdentifier: 
+  scenarios:
+  - title: Scenarios
+    defaultData: {fileID: 0}
+    scenarioAsset:
+    - scenarioAsset: {fileID: 11400000, guid: 0274cf0dd31ebaf4ca7e9f834d6a4b39, type: 2}
+      customData: {fileID: 0}
+    - scenarioAsset: {fileID: 11400000, guid: e8cc25db7705e3241bc6660c357fde02, type: 2}
+      customData: {fileID: 0}
+    - scenarioAsset: {fileID: 11400000, guid: 6dab4525274b1ac4a9fdb5784a47456c, type: 2}
+      customData: {fileID: 0}
+    - scenarioAsset: {fileID: 11400000, guid: 99a96981fdf62064d9da080d8ba10cc4, type: 2}
+      customData: {fileID: 0}
+    - scenarioAsset: {fileID: 11400000, guid: c072f3e2c418d6341a8b8244171098df, type: 2}
+      customData: {fileID: 0}
+    - scenarioAsset: {fileID: 11400000, guid: 8794db5fea1ff924c9f03acd0e860c50, type: 2}
+      customData: {fileID: 0}

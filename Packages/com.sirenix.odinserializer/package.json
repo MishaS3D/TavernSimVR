@@ -1,0 +1,14 @@
+{
+  "name": "com.sirenix.odinserializer",
+  "version": "2.1.12",
+  "displayName": "Odin Serializer",
+  "description": "Package version of Odin Serializer.",
+  "unity": "2019.3",
+  "keywords": [
+    "sirenix",
+    "odin"
+  ],
+  "author": {
+    "name": "Sirenix"
+  }
+}
