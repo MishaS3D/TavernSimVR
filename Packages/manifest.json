@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "com.unity.addressables": "1.19.19",
+    "com.unity.cinemachine": "2.8.6",
     "com.unity.collab-proxy": "1.15.16",
     "com.unity.ext.nunit": "1.0.6",
     "com.unity.formats.fbx": "4.1.2",
@@ -11,9 +12,7 @@
     "com.unity.memoryprofiler": "0.7.1-preview.1",
     "com.unity.nuget.newtonsoft-json": "3.0.2",
     "com.unity.probuilder": "5.0.3",
-    "com.unity.render-pipelines.core": "git://github.com/Oculus-VR/Unity-Graphics.git?path=/com.unity.render-pipelines.core#2020.3/oculus-app-spacewarp",
-    "com.unity.render-pipelines.universal": "git://github.com/Oculus-VR/Unity-Graphics.git?path=/com.unity.render-pipelines.universal#2020.3/oculus-app-spacewarp",
-    "com.unity.shadergraph": "git://github.com/Oculus-VR/Unity-Graphics.git?path=/com.unity.shadergraph#2020.3/oculus-app-spacewarp",
+    "com.unity.render-pipelines.universal": "12.1.6",
     "com.unity.test-framework": "1.1.31",
     "com.unity.textmeshpro": "3.0.6",
     "com.unity.timeline": "1.6.4",
