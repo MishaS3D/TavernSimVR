@@ -7,6 +7,10 @@ TagManager:
   - PosterWall
   - SecondTeleporter
   - Teleporter
+  - CinemachineTarget
+  - GrabTray
+  - DropOff
+  - PickUp
   layers:
   - Default
   - TransparentFX
@@ -22,8 +26,8 @@ TagManager:
   - GreenScreen
   - Loading
   - Fader
-  - 
-  - 
+  - DropOff
+  - PickUp
   - 
   - 
   - 

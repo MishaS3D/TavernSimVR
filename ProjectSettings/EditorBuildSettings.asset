@@ -6,14 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/CryptoCities/Scenarios/Player.unity
-    guid: d0fa40038612b65479dd35a1b458efbf
-  - enabled: 1
-    path: Assets/CryptoCities/Scenarios/Landing.unity
-    guid: ae93e957352e8b34a8f15ed803003575
-  - enabled: 1
-    path: Assets/CryptoCities/Scenarios/LoadingScene.unity
-    guid: cd3fbbad7bb67304bae667c1b87a6d3a
+    path: Assets/Scenes/TavernSimVR01.unity
+    guid: 58dd06238fd032c42aa3561c3c450acb
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 94dbd6ee978b55849851a97271f0c6b6,
       type: 2}
