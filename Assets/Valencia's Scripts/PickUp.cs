@@ -19,24 +19,11 @@ public class PickUp: MonoBehaviour
     public float minDistance;
     public GameObject Player;
 
-
-  
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+   
 
     // Update is called once per frame
     void Update()
     {
-        //if (CurrentObject && Mouse.current.leftButton.isPressed == false)
-        //{
-        //    CurrentObject.useGravity = true;
-        //    CurrentObject = null;
-        //    return;
-        //}
 
 
 
@@ -96,15 +83,5 @@ public class PickUp: MonoBehaviour
 
     }
 
-    //private void FixedUpdate()
-    //{
-    //    if (CurrentObject)
-    //    {
-    //        Vector3 DirectionToPoint = PickupTarget.position - CurrentObject.position;
-    //        float DistanceToPoint = DirectionToPoint.magnitude;
-
-    //        CurrentObject.velocity = DirectionToPoint * speed * DistanceToPoint;
-    //    }
-    //}
 
 }
