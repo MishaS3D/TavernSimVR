@@ -7,16 +7,16 @@ public class SceneChanger : MonoBehaviour
 {
    public void VRScene()
     {
-        SceneManager.LoadScene("Grab Interaction 1");
+        SceneManager.LoadScene("TavernSimVR01");
     }
 
     public void FPScene()
     {
-        SceneManager.LoadScene("Tavern FP");
+        SceneManager.LoadScene("TavernSimulatorFP");
     }
 
     public void MainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Main Menu");
     }
 }
