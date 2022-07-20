@@ -8,15 +8,15 @@ public class PickUp: MonoBehaviour
     [SerializeField] LayerMask PickupMask;
     [SerializeField] LayerMask DropOffMask;
     [SerializeField] Camera PlayerCamera;
-    [SerializeField] Transform PickupTarget;
-    [SerializeField] Transform DropOffTarget;
+    [SerializeField] Transform  PickupTarget;
+    [SerializeField] Transform []  DropOffTargets;
     [Space]
     [SerializeField] float PickupRange;
 
     [SerializeField] float speed;
     //Rigidbody CurrentObject;
-    GameObject currentPlate;
-    public float minDistance;
+    GameObject []  currentPlates;
+    public float MinDistance;
     public GameObject Player;
 
    
@@ -24,9 +24,6 @@ public class PickUp: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
-
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
             PickUpMethod();
@@ -44,43 +41,64 @@ public class PickUp: MonoBehaviour
         if (Physics.Raycast(CameraRay, out RaycastHit hitInfo, PickupRange, PickupMask))
         {
 
-            currentPlate = GameObject.FindGameObjectWithTag("PickUp");
+            currentPlates = GameObject.FindGameObjectsWithTag("PickUp");
 
-            currentPlate.transform.position = PickupTarget.position;
-            currentPlate.transform.parent = PickupTarget;
 
-            currentPlate.tag = "DropOff";
-            currentPlate.layer = 7;
+            foreach (GameObject currentPlate in currentPlates)
+            {
+                float dist = Vector3.Distance(currentPlate.transform.position, Player.transform.position);
 
+                if (dist < MinDistance)
+                {
+                    Debug.Log("Player is close enough");
+                    Debug.Log("Dropping Off");
+
+                    currentPlate.transform.position = PickupTarget.position;
+                    currentPlate.transform.parent = PickupTarget;
+
+                    currentPlate.tag = "DropOff";
+                    currentPlate.layer = 14;
+
+
+                }
+            }
         }
-
-
-        //CurrentObject = hitInfo.rigidbody;
-        //CurrentObject.useGravity = false;
 
         Debug.Log("Mouse was clicked");
     }
-    
+
     public void DropoffMethod()
     {
-        float dist = Vector3.Distance(DropOffTarget.position, Player.transform.position);
-        //Ray CameraRay2 = PlayerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
+        currentPlates = GameObject.FindGameObjectsWithTag("DropOff");
 
 
-
-
-        if (dist < minDistance)
+        foreach (Transform DropOffTarget in DropOffTargets)
         {
-            Debug.Log("Player is close enough");
-            Debug.Log("Dropping Off");
-            currentPlate = GameObject.FindGameObjectWithTag("DropOff");
 
-            currentPlate.transform.position = DropOffTarget.position;
-            currentPlate.transform.parent = DropOffTarget;
+            float dist = Vector3.Distance(DropOffTarget.position, Player.transform.position);
+
+            foreach (GameObject currentPlate in currentPlates)
+            {
+
+                if (dist < MinDistance)
+                {
+                    Debug.Log("Player is close enough");
+                    Debug.Log("Dropping Off");
 
 
+                    currentPlate.transform.position = DropOffTarget.position;
+                    currentPlate.transform.parent = DropOffTarget;
+
+                    currentPlate.tag = "PickUp";
+                    currentPlate.layer = 15;
+
+                }
+
+            }
         }
 
+        
+            
     }
 
 
