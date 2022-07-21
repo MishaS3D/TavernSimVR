@@ -11,6 +11,7 @@ TagManager:
   - GrabTray
   - DropOff
   - PickUp
+  - Area1
   layers:
   - Default
   - TransparentFX
