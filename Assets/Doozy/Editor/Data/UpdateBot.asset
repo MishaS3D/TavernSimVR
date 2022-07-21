@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bb85a0dab364b12b45cd193d259769d, type: 3}
   m_Name: UpdateBot
   m_EditorClassIdentifier: 
-  Update: 1
+  Update: 0
