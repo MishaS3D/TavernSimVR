@@ -12,6 +12,7 @@ TagManager:
   - DropOff
   - PickUp
   - Area1
+  - Item1
   layers:
   - Default
   - TransparentFX

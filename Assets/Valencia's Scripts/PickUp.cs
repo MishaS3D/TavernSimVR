@@ -16,10 +16,15 @@ public class PickUp: MonoBehaviour
     [SerializeField] float speed;
     //Rigidbody CurrentObject;
     GameObject []  currentPlates;
+    public string currentPlateName;
     public float MinDistance;
     public GameObject Player;
+    public bool placed;
 
-   
+    private void Start()
+    {
+        placed = false;
+    }
 
     // Update is called once per frame
     void Update()
@@ -50,22 +55,23 @@ public class PickUp: MonoBehaviour
 
                 if (dist < MinDistance)
                 {
-                    Debug.Log("Player is close enough");
-                    Debug.Log("Dropping Off");
-
+  
                     currentPlate.transform.position = PickupTarget.position;
                     currentPlate.transform.parent = PickupTarget;
+
+                    placed = false;
+
+
 
                     currentPlate.tag = "DropOff";
                     currentPlate.layer = 14;
 
-
+                    break;
                 }
-                break;
+                
             }
         }
 
-        Debug.Log("Mouse was clicked");
     }
 
     public void DropoffMethod()
@@ -83,12 +89,16 @@ public class PickUp: MonoBehaviour
 
                 if (dist < MinDistance)
                 {
-                    Debug.Log("Player is close enough");
-                    Debug.Log("Dropping Off");
+
 
 
                     currentPlate.transform.position = DropOffTarget.position;
                     currentPlate.transform.parent = DropOffTarget;
+
+                    currentPlateName = currentPlate.name;
+                    Debug.Log(currentPlateName);
+
+                    placed = true;
 
                     currentPlate.tag = "PickUp";
                     currentPlate.layer = 15;
