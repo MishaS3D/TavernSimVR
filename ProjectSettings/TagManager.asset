@@ -5,14 +5,15 @@ TagManager:
   serializedVersion: 2
   tags:
   - PosterWall
-  - SecondTeleporter
   - Teleporter
   - CinemachineTarget
   - GrabTray
   - DropOff
   - PickUp
   - Area1
-  - Item1
+  - Order1
+  - Order2
+  - Order3
   layers:
   - Default
   - TransparentFX

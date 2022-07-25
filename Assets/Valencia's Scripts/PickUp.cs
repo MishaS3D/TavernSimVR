@@ -20,10 +20,14 @@ public class PickUp: MonoBehaviour
     public float MinDistance;
     public GameObject Player;
     public bool placed;
+    public Vector3 currentPlatePosition;
+    public GameObject selectedPlate;
 
     private void Start()
     {
         placed = false;
+        selectedPlate = null;
+
     }
 
     // Update is called once per frame
@@ -52,12 +56,17 @@ public class PickUp: MonoBehaviour
             foreach (GameObject currentPlate in currentPlates)
             {
                 float dist = Vector3.Distance(currentPlate.transform.position, Player.transform.position);
+                currentPlatePosition = currentPlate.transform.position;
 
                 if (dist < MinDistance)
                 {
+                    selectedPlate = currentPlate;
+
   
                     currentPlate.transform.position = PickupTarget.position;
                     currentPlate.transform.parent = PickupTarget;
+
+                    currentPlateName = null;
 
                     placed = false;
 
@@ -89,14 +98,10 @@ public class PickUp: MonoBehaviour
 
                 if (dist < MinDistance)
                 {
-
-
-
                     currentPlate.transform.position = DropOffTarget.position;
                     currentPlate.transform.parent = DropOffTarget;
 
                     currentPlateName = currentPlate.name;
-                    Debug.Log(currentPlateName);
 
                     placed = true;
 

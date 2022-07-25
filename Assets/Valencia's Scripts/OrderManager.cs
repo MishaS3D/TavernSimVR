@@ -24,12 +24,22 @@ public class OrderManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public PickUp pickUp;
 
+    int timesClonedO1;
+    int timesClonedO2;
+    int timesClonedO3;
+
+    GameObject newOrder1;
+    GameObject newOrder2;
+    GameObject newOrder3;
     // Start is called before the first frame update
     void Start()
     {
+        timesClonedO1 = 0;
+        timesClonedO2 = 0;
+        timesClonedO3 = 0;
 
-        SelectOrder();
-        SelectTable();
+       SelectOrder();
+       SelectTable();
         score = 0;
         scoreText.text = score.ToString();
 
@@ -38,6 +48,7 @@ public class OrderManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
 
     }
 
@@ -94,8 +105,73 @@ public class OrderManager : MonoBehaviour
                     Debug.Log("Increase Score");
                     score++;
                     scoreText.text = score.ToString();
+                    if (currentOrder == order1)
+                    {
+                        if (timesClonedO1 == 0)
+                        {
+
+                            newOrder1 = Instantiate(order1, pickUp.currentPlatePosition, Quaternion.identity);
+                            newOrder1.name = order1.name;
+                            timesClonedO1++;
+                            pickUp.selectedPlate.SetActive(false);
+                        }
+                        else
+                        {
+                           newOrder1 = Instantiate(newOrder1, pickUp.currentPlatePosition, Quaternion.identity);
+                           newOrder1.name = order1.name;
+                           pickUp.selectedPlate.SetActive(false);
+                        }
+                      
+       
+
+                    }
+                    else if (currentOrder == order2)
+                    {
+
+                        if (timesClonedO2 == 0)
+                        {
+
+                            newOrder2 = Instantiate(order2, pickUp.currentPlatePosition, Quaternion.identity);
+                            newOrder2.name = order2.name;
+                            timesClonedO2++;
+                            pickUp.selectedPlate.SetActive(false);
+                        }
+                        else
+                        {
+                            newOrder2 = Instantiate(newOrder2, pickUp.currentPlatePosition, Quaternion.identity);
+                            newOrder2.name = order2.name;
+                            pickUp.selectedPlate.SetActive(false);
+                        }
+
+
+
+                    }
+                    else if (currentOrder == order3)
+                    {
+
+                        if (timesClonedO3 == 0)
+                        {
+
+                            newOrder3 = Instantiate(order3, pickUp.currentPlatePosition, Quaternion.identity);
+                            newOrder3.name = order3.name;
+                            timesClonedO3++;
+                            pickUp.selectedPlate.SetActive(false);
+                        }
+                        else
+                        {
+                            newOrder3 = Instantiate(newOrder3, pickUp.currentPlatePosition, Quaternion.identity);
+                            newOrder3.name = order3.name;
+                            pickUp.selectedPlate.SetActive(false);
+                        }
+
+
+
+                    }
+                    Debug.Log("Completed Order");
                     SelectOrder();
                     SelectTable();
+
+
                     break;
 
                 }
