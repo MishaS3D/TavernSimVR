@@ -31,6 +31,10 @@ public class OrderManager : MonoBehaviour
     GameObject newOrder1;
     GameObject newOrder2;
     GameObject newOrder3;
+
+    public Transform order1Position;
+    public Transform order2Position;
+    public Transform order3Position;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +42,7 @@ public class OrderManager : MonoBehaviour
         timesClonedO2 = 0;
         timesClonedO3 = 0;
 
-       SelectOrder();
+      SelectOrder();
        SelectTable();
         score = 0;
         scoreText.text = score.ToString();
@@ -48,7 +52,7 @@ public class OrderManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        CheckOrder();
 
     }
 
@@ -98,31 +102,35 @@ public class OrderManager : MonoBehaviour
     {
         foreach (OrderChecker orderChecker in orderCheckers)
         {
-            if (currentTable.name == orderChecker.checkedTable.name)
+            if (currentTable.name == orderChecker.checkedTable.name && orderChecker.atTable == true)
             {
+                Debug.Log(currentTable.name);
+                Debug.Log(orderChecker.checkedTable.name);
+
+
                 if (currentOrder.name == pickUp.currentPlateName)
                 {
-                    Debug.Log("Increase Score");
                     score++;
                     scoreText.text = score.ToString();
+                    orderChecker.atTable = false;
                     if (currentOrder == order1)
                     {
                         if (timesClonedO1 == 0)
                         {
 
-                            newOrder1 = Instantiate(order1, pickUp.currentPlatePosition, Quaternion.identity);
+                            newOrder1 = Instantiate(order1, order1Position.position, Quaternion.identity);
                             newOrder1.name = order1.name;
                             timesClonedO1++;
                             pickUp.selectedPlate.SetActive(false);
                         }
                         else
                         {
-                           newOrder1 = Instantiate(newOrder1, pickUp.currentPlatePosition, Quaternion.identity);
-                           newOrder1.name = order1.name;
-                           pickUp.selectedPlate.SetActive(false);
+                            newOrder1 = Instantiate(newOrder1, order1Position.position, Quaternion.identity);
+                            newOrder1.name = order1.name;
+                            pickUp.selectedPlate.SetActive(false);
                         }
-                      
-       
+
+
 
                     }
                     else if (currentOrder == order2)
@@ -131,14 +139,14 @@ public class OrderManager : MonoBehaviour
                         if (timesClonedO2 == 0)
                         {
 
-                            newOrder2 = Instantiate(order2, pickUp.currentPlatePosition, Quaternion.identity);
+                            newOrder2 = Instantiate(order2, order2Position.position, Quaternion.identity);
                             newOrder2.name = order2.name;
                             timesClonedO2++;
                             pickUp.selectedPlate.SetActive(false);
                         }
                         else
                         {
-                            newOrder2 = Instantiate(newOrder2, pickUp.currentPlatePosition, Quaternion.identity);
+                            newOrder2 = Instantiate(newOrder2, order2Position.position, Quaternion.identity);
                             newOrder2.name = order2.name;
                             pickUp.selectedPlate.SetActive(false);
                         }
@@ -152,14 +160,14 @@ public class OrderManager : MonoBehaviour
                         if (timesClonedO3 == 0)
                         {
 
-                            newOrder3 = Instantiate(order3, pickUp.currentPlatePosition, Quaternion.identity);
+                            newOrder3 = Instantiate(order3, order3Position.position, Quaternion.identity);
                             newOrder3.name = order3.name;
                             timesClonedO3++;
                             pickUp.selectedPlate.SetActive(false);
                         }
                         else
                         {
-                            newOrder3 = Instantiate(newOrder3, pickUp.currentPlatePosition, Quaternion.identity);
+                            newOrder3 = Instantiate(newOrder3, order3Position.position, Quaternion.identity);
                             newOrder3.name = order3.name;
                             pickUp.selectedPlate.SetActive(false);
                         }
@@ -168,6 +176,7 @@ public class OrderManager : MonoBehaviour
 
                     }
                     Debug.Log("Completed Order");
+
                     SelectOrder();
                     SelectTable();
 

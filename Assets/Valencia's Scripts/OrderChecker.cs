@@ -9,23 +9,26 @@ public class OrderChecker : MonoBehaviour
 {
     public PickUp pickUpScript;
     public OrderManager orderManager;
- 
+    public bool atTable;
     public GameObject checkedTable;
     private void Start()
     {
-
+        atTable = false;
     }
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log("Player is in" + gameObject.name);
+            atTable=true;
             checkedTable = this.gameObject;
+            Debug.Log("Player is in" + checkedTable.name);
+
 
             if (pickUpScript.placed == true)
             {
                 orderManager.CheckOrder();
                 pickUpScript.placed = false;
+
                 //Debug.Log(pickUpScript.currentPlateName);
             }
         }

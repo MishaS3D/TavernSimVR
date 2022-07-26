@@ -14,6 +14,7 @@ public class PickUp: MonoBehaviour
     [SerializeField] float PickupRange;
 
     [SerializeField] float speed;
+
     //Rigidbody CurrentObject;
     GameObject []  currentPlates;
     public string currentPlateName;
@@ -46,6 +47,7 @@ public class PickUp: MonoBehaviour
     
     public void PickUpMethod()
     {
+
         Ray CameraRay = PlayerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
         if (Physics.Raycast(CameraRay, out RaycastHit hitInfo, PickupRange, PickupMask))
         {
@@ -98,6 +100,7 @@ public class PickUp: MonoBehaviour
 
                 if (dist < MinDistance)
                 {
+
                     currentPlate.transform.position = DropOffTarget.position;
                     currentPlate.transform.parent = DropOffTarget;
 
@@ -109,6 +112,9 @@ public class PickUp: MonoBehaviour
                     currentPlate.layer = 15;
 
                 }
+
+
+
 
             }
         }

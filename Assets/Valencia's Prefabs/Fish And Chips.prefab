@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3110057480728423712}
   m_Layer: 0
   m_Name: Fish And Chips
-  m_TagString: Order3
+  m_TagString: Order
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
