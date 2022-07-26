@@ -42965,6 +42965,7 @@ MonoBehaviour:
   order1Position: {fileID: 1651017543}
   order2Position: {fileID: 1532169954}
   order3Position: {fileID: 1383081724}
+  WrongOrder: 0
 --- !u!114 &1213480342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42978,6 +42979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orderText: {fileID: 292051390}
+  order: 
   OrderManager: {fileID: 1213480341}
 --- !u!114 &1213480343
 MonoBehaviour:
@@ -62392,7 +62394,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1651017542}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.258, y: -0.055, z: -0.101}
+  m_LocalPosition: {x: -0.229, y: -0.055, z: -0.101}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
