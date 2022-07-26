@@ -35,6 +35,8 @@ public class OrderManager : MonoBehaviour
     public Transform order1Position;
     public Transform order2Position;
     public Transform order3Position;
+
+    public bool WrongOrder;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,17 +44,18 @@ public class OrderManager : MonoBehaviour
         timesClonedO2 = 0;
         timesClonedO3 = 0;
 
-      SelectOrder();
-       SelectTable();
+        SelectOrder();
+        SelectTable();
         score = 0;
         scoreText.text = score.ToString();
+        WrongOrder = false;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        CheckOrder();
+     // CheckOrder();
 
     }
 
@@ -98,84 +101,169 @@ public class OrderManager : MonoBehaviour
  
     }
 
+  
+    IEnumerator WrongOrderTimer()
+    {
+        WrongOrder = true;
+        yield return new WaitForSeconds(1);
+        WrongOrder = false;
+    }
+   
+    public void SpawnPlateCorrect()
+    {
+        if (currentOrder.name == order1.name)
+        {
+            if (timesClonedO1 == 0)
+            {
+
+                newOrder1 = Instantiate(order1, order1Position.position, Quaternion.identity);
+                newOrder1.name = order1.name;
+                timesClonedO1++;
+                pickUp.selectedPlate.SetActive(false);
+            }
+            else
+            {
+                newOrder1 = Instantiate(newOrder1, order1Position.position, Quaternion.identity);
+                newOrder1.name = order1.name;
+                pickUp.selectedPlate.SetActive(false);
+            }
+
+
+
+        }
+        else if (currentOrder.name == order2.name)
+        {
+
+            if (timesClonedO2 == 0)
+            {
+
+                newOrder2 = Instantiate(order2, order2Position.position, Quaternion.identity);
+                newOrder2.name = order2.name;
+                timesClonedO2++;
+                pickUp.selectedPlate.SetActive(false);
+            }
+            else
+            {
+                newOrder2 = Instantiate(newOrder2, order2Position.position, Quaternion.identity);
+                newOrder2.name = order2.name;
+                pickUp.selectedPlate.SetActive(false);
+            }
+
+
+
+        }
+        else if (currentOrder.name == order3.name)
+        {
+
+            if (timesClonedO3 == 0)
+            {
+
+                newOrder3 = Instantiate(order3, order3Position.position, Quaternion.identity);
+                newOrder3.name = order3.name;
+                timesClonedO3++;
+                pickUp.selectedPlate.SetActive(false);
+            }
+            else
+            {
+                newOrder3 = Instantiate(newOrder3, order3Position.position, Quaternion.identity);
+                newOrder3.name = order3.name;
+                pickUp.selectedPlate.SetActive(false);
+            }
+
+
+
+        }
+    }
+
+    public void SpawnPlateWrong()
+    {
+        Debug.Log("Spawn Plate Wrong " + pickUp.selectedPlate + "  " + order3);
+        Debug.Log(Object.ReferenceEquals(pickUp.selectedPlate, order3));
+        if (pickUp.selectedPlate.name == order1.name)
+        {
+            if (timesClonedO1 == 0)
+            {
+
+                newOrder1 = Instantiate(order1, order1Position.position, Quaternion.identity);
+                newOrder1.name = order1.name;
+                timesClonedO1++;
+                pickUp.selectedPlate.SetActive(false);
+                return;
+            }
+            else
+            {
+                newOrder1 = Instantiate(newOrder1, order1Position.position, Quaternion.identity);
+                newOrder1.name = order1.name;
+                pickUp.selectedPlate.SetActive(false);
+                return;
+            }
+
+
+
+        }
+        else if (pickUp.selectedPlate.name == order2.name)
+        {
+            Debug.Log("Spawn Plate wrong - Order 2");
+            if (timesClonedO2 == 0)
+            {
+
+                newOrder2 = Instantiate(order2, order2Position.position, Quaternion.identity);
+                newOrder2.name = order2.name;
+                timesClonedO2++;
+                pickUp.selectedPlate.SetActive(false);
+                return;
+            }
+            else
+            {
+                newOrder2 = Instantiate(newOrder2, order2Position.position, Quaternion.identity);
+                newOrder2.name = order2.name;
+                pickUp.selectedPlate.SetActive(false);
+                return;
+            }
+
+
+
+        }
+        else if (pickUp.selectedPlate.name == order3.name)
+        {
+            Debug.Log("Spawn Plate wrong - Order 3");
+            if (timesClonedO3 == 0)
+            {
+
+                newOrder3 = Instantiate(order3, order3Position.position, Quaternion.identity);
+                newOrder3.name = order3.name;
+                timesClonedO3++;
+                pickUp.selectedPlate.SetActive(false);
+                return;
+            }
+            else
+            {
+                newOrder3 = Instantiate(newOrder3, order3Position.position, Quaternion.identity);
+                newOrder3.name = order3.name;
+                pickUp.selectedPlate.SetActive(false);
+                return;
+            }
+
+
+
+        }
+    }
+
     public void CheckOrder()
     {
         foreach (OrderChecker orderChecker in orderCheckers)
         {
             if (currentTable.name == orderChecker.checkedTable.name && orderChecker.atTable == true)
             {
-                Debug.Log(currentTable.name);
-                Debug.Log(orderChecker.checkedTable.name);
-
-
                 if (currentOrder.name == pickUp.currentPlateName)
                 {
+                    WrongOrder = false;
                     score++;
                     scoreText.text = score.ToString();
                     orderChecker.atTable = false;
-                    if (currentOrder == order1)
-                    {
-                        if (timesClonedO1 == 0)
-                        {
 
-                            newOrder1 = Instantiate(order1, order1Position.position, Quaternion.identity);
-                            newOrder1.name = order1.name;
-                            timesClonedO1++;
-                            pickUp.selectedPlate.SetActive(false);
-                        }
-                        else
-                        {
-                            newOrder1 = Instantiate(newOrder1, order1Position.position, Quaternion.identity);
-                            newOrder1.name = order1.name;
-                            pickUp.selectedPlate.SetActive(false);
-                        }
-
-
-
-                    }
-                    else if (currentOrder == order2)
-                    {
-
-                        if (timesClonedO2 == 0)
-                        {
-
-                            newOrder2 = Instantiate(order2, order2Position.position, Quaternion.identity);
-                            newOrder2.name = order2.name;
-                            timesClonedO2++;
-                            pickUp.selectedPlate.SetActive(false);
-                        }
-                        else
-                        {
-                            newOrder2 = Instantiate(newOrder2, order2Position.position, Quaternion.identity);
-                            newOrder2.name = order2.name;
-                            pickUp.selectedPlate.SetActive(false);
-                        }
-
-
-
-                    }
-                    else if (currentOrder == order3)
-                    {
-
-                        if (timesClonedO3 == 0)
-                        {
-
-                            newOrder3 = Instantiate(order3, order3Position.position, Quaternion.identity);
-                            newOrder3.name = order3.name;
-                            timesClonedO3++;
-                            pickUp.selectedPlate.SetActive(false);
-                        }
-                        else
-                        {
-                            newOrder3 = Instantiate(newOrder3, order3Position.position, Quaternion.identity);
-                            newOrder3.name = order3.name;
-                            pickUp.selectedPlate.SetActive(false);
-                        }
-
-
-
-                    }
                     Debug.Log("Completed Order");
+                    SpawnPlateCorrect();
 
                     SelectOrder();
                     SelectTable();
@@ -184,6 +272,21 @@ public class OrderManager : MonoBehaviour
                     break;
 
                 }
+                else 
+                {
+                    StartCoroutine(WrongOrderTimer());
+                    SpawnPlateWrong();
+                    break;
+  
+                }
+               
+                
+            }
+            else
+            {
+                StartCoroutine(WrongOrderTimer());
+                SpawnPlateWrong();
+                break;
             }
         }
        

@@ -21,7 +21,6 @@ public class OrderChecker : MonoBehaviour
         {
             atTable=true;
             checkedTable = this.gameObject;
-            Debug.Log("Player is in" + checkedTable.name);
 
 
             if (pickUpScript.placed == true)

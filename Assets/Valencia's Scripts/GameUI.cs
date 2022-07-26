@@ -9,21 +9,32 @@ using TMPro;
 public class GameUI : MonoBehaviour
 {
     public TextMeshProUGUI orderText;
-    string order;
+    public string order;
     public OrderManager OrderManager;
-    // Start is called before the first frame update
-    void Start()
+
+    private void Start()
     {
-      
-
-        
+        OrderManager.WrongOrder = false;
     }
-
     // Update is called once per frame
     void Update()
     {
-        order = OrderManager.currentTable.name + " ordered " + OrderManager.currentOrder.name;
-        orderText.text = order;
+
+        if (OrderManager.WrongOrder == true)
+        {
+
+            order = "Wrong Order";
+            orderText.text = order;
+
+        }
+        else if (OrderManager.WrongOrder == false)
+        {
+            order = OrderManager.currentTable.name + " ordered " + OrderManager.currentOrder.name;
+            orderText.text = order;
+        }
+        
+        
+        
 
     }
 

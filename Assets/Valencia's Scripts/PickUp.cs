@@ -66,6 +66,7 @@ public class PickUp: MonoBehaviour
 
   
                     currentPlate.transform.position = PickupTarget.position;
+                    currentPlate.transform.rotation = PickupTarget.rotation;
                     currentPlate.transform.parent = PickupTarget;
 
                     currentPlateName = null;
@@ -100,9 +101,12 @@ public class PickUp: MonoBehaviour
 
                 if (dist < MinDistance)
                 {
-
-                    currentPlate.transform.position = DropOffTarget.position;
+                    selectedPlate = currentPlate;
                     currentPlate.transform.parent = DropOffTarget;
+                    currentPlate.transform.position = DropOffTarget.position;
+                    currentPlate.transform.rotation = DropOffTarget.rotation;
+                    currentPlate.transform.localScale = new Vector3(1, 1, 1);
+
 
                     currentPlateName = currentPlate.name;
 
@@ -110,7 +114,7 @@ public class PickUp: MonoBehaviour
 
                     currentPlate.tag = "PickUp";
                     currentPlate.layer = 15;
-
+                    break;
                 }
 
 
