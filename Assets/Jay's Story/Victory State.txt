@@ -1,0 +1,17 @@
+===VICTORY STATE===
+
+After the last customer leaves and the last table’s bussed, you tally up your earnings for the day: £<FINAL_SCORE>.
+
+Right as you finish counting your money, a distinctive “click-clack” of gentlemanly leather shoes echo from the stairway. It’s Lord Smellingham, and he’s come to collect!
+
+“End of the day, Ms. Steele. You remember the deal, don’t you? Well, then, don’t keep me waiting!
+
+Hmmm… very well, I can’t argue with that. I asked for the rent in full, and you delivered it in full. I suppose this means I’ll leave your crummy tavern alone… for now.
+
+So, I’ll be taking my leave. But don’t think you can start dilly-dallying, now! I’ll be back at this same time seven days from now to collect next week’s rent. If you don’t have $<WIN_AMOUNT+20%> for me then, then I’d suggest reconsidering your old career shoveling cow dung in wine country. Ta-ta!”
+
+Lord Smellingham disappears up the staircase as you plop onto a chair, exhausted, but satisfied.
+
+CONGRATULATIONS!
+
+For more development updates, follow us on <FOLLOW INFO>

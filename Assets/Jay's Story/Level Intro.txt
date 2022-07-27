@@ -1,0 +1,11 @@
+===LEVEL INTRO===
+
+After you get the place ready for the morning crowd, a loud “click-clack” of fine leather shoes starts echoing from the staircase. Soon after, a tall, slender man with a top hat, cane, and monocle crosses the doorway into the tavern.
+
+“Ah, there you are! Old Man Steele’s progeny, I presume? Ghastly that such a dreadful man was able to reproduce… but dear me, where are my manners? I am Lord Whinnius Pherbius Smellingham, Fourth of His Name, Order of the Albionese Empire, and I am your landlord. Surprised? You shouldn’t be. Your old man may have bequeathed you the tavern building, but I am the proprietor of the plot of land upon which the eyesore stands. This means you must pay me rent, each week, without fail. And would you have guessed it? Rent day is today!
+
+What’s that? You’ve only had the bar for a day? You’ve only just arrived? You haven’t even seen the inside? Enough excuses, young lady! I’ll be stopping by at the end of the day. If you don’t pay me £<WIN_AMOUNT> in full by then, I’ll tear down this crumbling pile of architectural detritus you call a tavern and construct a tea lounge on top of the rubble. Do I make myself clear?
+
+Glad we’re on the same page. Now, I am a very busy man, and I tire of conversing with you. I will now take my leave. Good luck with the tavern, Ms. Steele.”
+
+Lord Smellingham disappears up the staircase just as the day’s first customers start walking down…

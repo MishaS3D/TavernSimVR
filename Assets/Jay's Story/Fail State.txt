@@ -1,0 +1,23 @@
+===FAIL STATE===
+
+After the last customer leaves and the last table’s bussed, you tally up your earnings for the day: £<FINAL_SCORE>.
+
+Right as you finish counting your money, a distinctive “click-clack” of gentlemanly leather shoes echo from the stairway. It’s Lord Smellingham, and he’s come to collect!
+
+“End of the day, Ms. Steele. You remember the deal, don’t you? Well, then, don’t keep me waiting!
+
+What’s this, now? Just £<FINAL_SCORE>?! I specifically asked for £<WIN_AMOUNT>, did I not? That means £<WIN_AMOUNT>, and not a penny less, much less £<DIFFERENCE> short!
+
+Well, then, since you have failed to fulfill your fiduciary responsibilities as my tenant, I have no choice but to evict you and your filthy tavern off my land. Furthermore, as is stipulated in our lease, I am also entitled to compensation for any material or labour costs incurred from clearing your building from my land.
+
+Such costs are estimated at £483,000, in addition to the difference in rent. Since you are clearly unable to pay, my only means of recourse is to have you thrown in debtor’s prison for as long as the State deems fit. Take her away, Inspector.”
+
+*handcuffs tighten*
+
+“Alright, into the Steam Carriage, miss. Mind your head.”
+
+The Police Carriage steams off into the night while Smellingham looks on, smugly grinning as if to taunt you for your misfortune. Meanwhile, you start praying to the old gods to choose a merciful Magistrate to adjudicate your case.
+
+GAME OVER
+
+Try again? Y/N
