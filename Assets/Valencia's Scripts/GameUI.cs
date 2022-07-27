@@ -15,6 +15,7 @@ public class GameUI : MonoBehaviour
     private void Start()
     {
         OrderManager.WrongOrder = false;
+        Cursor.visible = false;
     }
     // Update is called once per frame
     void Update()

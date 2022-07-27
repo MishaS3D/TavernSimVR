@@ -15,6 +15,7 @@ TagManager:
   - Order2
   - Order3
   - Order
+  - Score
   layers:
   - Default
   - TransparentFX

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class Timer : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Timer : MonoBehaviour
     public float currentTime;
     public float startMinutes;
     public TextMeshProUGUI currrentTimeText;
+    public SceneChanger changer;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,10 @@ public class Timer : MonoBehaviour
             if (currentTime <= 0)
             {
                 timerActive = false;
+                Time.timeScale = 0;
+                changer.EndScene();
+                
+
             }
         }
         TimeSpan time = TimeSpan.FromSeconds(currentTime);

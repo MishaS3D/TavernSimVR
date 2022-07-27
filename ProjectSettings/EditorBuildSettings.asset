@@ -6,11 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main Menu.unity
-    guid: 6320c0e27aa2b874e936e806c6e1b216
-  - enabled: 1
-    path: Assets/Scenes/TavernSimVR01.unity
-    guid: 58dd06238fd032c42aa3561c3c450acb
+    path: Assets/Scenes/Menu Alpha.unity
+    guid: 6e5d74d30e9450e4ab88eb5ccb1ebe48
   - enabled: 1
     path: Assets/Scenes/TavernSimulatorFP.unity
     guid: eba9cc40b48ab1747b0cdd0d338b1fb0
