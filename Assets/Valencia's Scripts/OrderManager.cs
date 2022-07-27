@@ -177,8 +177,7 @@ public class OrderManager : MonoBehaviour
 
     public void SpawnPlateWrong()
     {
-        Debug.Log("Spawn Plate Wrong " + pickUp.selectedPlate + "  " + order3);
-        Debug.Log(Object.ReferenceEquals(pickUp.selectedPlate, order3));
+
         if (pickUp.selectedPlate.name == order1.name)
         {
             if (timesClonedO1 == 0)
@@ -253,17 +252,20 @@ public class OrderManager : MonoBehaviour
     {
         foreach (OrderChecker orderChecker in orderCheckers)
         {
-            if (currentTable.name == orderChecker.checkedTable.name && orderChecker.atTable == true)
+
+         
+            if (currentTable.name == orderChecker.checkedTable.name )
             {
-                if (currentOrder.name == pickUp.currentPlateName)
+                if (currentOrder.name == pickUp.selectedPlate.name)
                 {
                     WrongOrder = false;
                     score++;
                     scoreText.text = score.ToString();
                     orderChecker.atTable = false;
 
-                    Debug.Log("Completed Order");
+
                     SpawnPlateCorrect();
+
 
                     SelectOrder();
                     SelectTable();
@@ -274,6 +276,7 @@ public class OrderManager : MonoBehaviour
                 }
                 else 
                 {
+
                     StartCoroutine(WrongOrderTimer());
                     SpawnPlateWrong();
                     break;
@@ -282,12 +285,7 @@ public class OrderManager : MonoBehaviour
                
                 
             }
-            else
-            {
-                StartCoroutine(WrongOrderTimer());
-                SpawnPlateWrong();
-                break;
-            }
+            
         }
        
     }

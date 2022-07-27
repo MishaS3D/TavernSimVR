@@ -20,18 +20,33 @@ public class OrderChecker : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             atTable=true;
+
+           // Debug.Log("Player is at  " + this.gameObject);
             checkedTable = this.gameObject;
 
 
-            if (pickUpScript.placed == true)
+            if (pickUpScript.placed == true && atTable == true)
             {
+
                 orderManager.CheckOrder();
                 pickUpScript.placed = false;
+                atTable = false;
 
                 //Debug.Log(pickUpScript.currentPlateName);
             }
         }
     }
 
-   
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            atTable = false;
+
+            checkedTable = this.gameObject;
+        }
+        
+    }
+
+
 }

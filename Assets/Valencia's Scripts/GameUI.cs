@@ -27,7 +27,8 @@ public class GameUI : MonoBehaviour
             orderText.text = order;
 
         }
-        else if (OrderManager.WrongOrder == false)
+
+        else
         {
             order = OrderManager.currentTable.name + " ordered " + OrderManager.currentOrder.name;
             orderText.text = order;
