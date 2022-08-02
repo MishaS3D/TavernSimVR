@@ -37,6 +37,12 @@ public class OrderManager : MonoBehaviour
     public Transform order3Position;
 
     public bool WrongOrder;
+
+    private void Awake()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
